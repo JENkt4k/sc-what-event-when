@@ -16,7 +16,7 @@ MDN has a list of events [here](https://developer.mozilla.org/en-US/docs/Web/Eve
 
 ## When Should we use them?
 
-***"click"*** is probably the most commonly used event, but before we get to that, lets quickly go over the question "What would you use 'focus' for?"
+***"click"*** is probably the most commonly used event, but before we get to that, lets quickly go over the question *"What would you use **'focus'** for?"*
 
 A good example for ***'focus'*** *(or more appropriately **'blur'**)* would be a form where the user is expected to enter a required value first, or before the user moves out of an entry field like a text box. "Password" and/or "Username" are good examples as when creating a new account or logging in these cannot be left blank.
 
@@ -130,7 +130,7 @@ If you set ***'onfocus'*** to
 ```javascript
 onfocus="alertOnEventHandler(event)"
 ```
-then click on the element with that event handler, you'll probably see the alert continuously pop up. Can you guess why this is happening? Pause for a moment before reading further.
+then click on the element with that event handler, you'll probably see the alert continuously pop up. Can you guess why this is happening? Does the same thing happen if you change the 'onfocus' to 'onblur'? Pause for a moment before reading further.
 
 **SQUIRREL!!!!**
 
