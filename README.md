@@ -60,9 +60,11 @@ If the user enters some data, leaves and then re-enters, the warning is hidden w
 ```javascript
 // question mark "?" is called a ternary operator, and is shorthand for simple if statements. let <some variable> = <conditional> ? <result returned if true> : <result returned if false>
 warning.style.visibility =  !event.target.value ? "visible" : "hidden";
+```
 
-//this is the exact same as saying:
+this is the exact same as saying:
 
+```javascript
 //not (!), or inverse of: falsey if the string is empty, true if the string has data
 //  e.g. the 'if' evaluates to "true" if there is nothing in the password box
 if(!event.target.value){
