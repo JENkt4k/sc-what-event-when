@@ -124,7 +124,7 @@ Then change the event handlers being called
 
 Did you see some strange behavior? What happens if you use both ***'onblur'*** and ***'onfocus'***?
 
-##  The "Infinite" UI loop
+##  The "Infinite" UI loop bug
 
 If you set ***'onfocus'*** to
 ```javascript
@@ -150,4 +150,4 @@ Answer: So if you create an alert in the **'focus'** event, when you go to click
 
 5) the last element to have focus was the elment with the callback that creates the alert and the whole thing starts over, back to step #1
 
-Not thinking, I instructed a student to write this code and it took a minute to figure out what had happened. The lesson being, sometimes it's not a good idea to simply swap console.log with alert.
+Not thinking, I instructed a student to write this code and it took a minute to figure out what had happened. The lesson being, sometimes it's not a good idea to simply swap console.log with alert. :)
