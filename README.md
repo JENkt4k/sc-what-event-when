@@ -2,7 +2,7 @@
 
 ## Overview
 
-*"What would you use **'focus'** event for?"* was an excellent question and hilariously led me to guiding the student to writing an accidental infinite UI loop. So I thought I would create some quick examples code for some common events I've seen used.
+*"What would you use **'focus'** event for?"* was an excellent question and hilariously led me to guiding the student to writing an accidental infinite UI loop. So I thought I would create some quick example code for some common events I've seen used.
 
 ## What Events?
 
@@ -171,4 +171,4 @@ Answer: So if you create an alert in the **'focus'** event, when you go to click
 
 5) the last element to have focus was the elment with the callback that creates the alert and the whole thing starts over, back to step #1
 
-Not thinking, I instructed a student to write this code and it took a minute to figure out what had happened. The lesson being, sometimes it's not a good idea to simply swap console.log with alert. :)
+Not thinking, I instructed a student to write this code and it took a minute to figure out what had happened. The lesson being, sometimes it's not a good idea to blindly swap console.log with alert. :)
