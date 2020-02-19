@@ -54,7 +54,7 @@ With the preceding code, the user sees a string of red text, see below, after en
 
 ![empty password, warning](images/password-no-value-warn.png)
 
-clicking on an element in the page puts the item in 'focus', clicking off is removing the element from focus or *'blur'*-ing the element
+Clicking on an element in the page puts the item in 'focus', clicking off is removing the element from focus or *'blur'*-ing the element.
 
 If the user enters some data, leaves and then re-enters, the warning is hidden with the ternary operator code here:
 
