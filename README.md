@@ -14,7 +14,7 @@ MDN has a list of events [here](https://developer.mozilla.org/en-US/docs/Web/Eve
 | blur |  An element has lost focus (does not bubble). |
 | click | A pointing device button (ANY button; soon to be primary button only) has been pressed and released on an element |
 
-## When Should we use them?
+## When Should We Use Certain Event Types?
 
 ***"click"*** is probably the most commonly used event, but before we get to that, lets quickly go over the question *"What would you use **'focus'** for?"*
 
@@ -159,7 +159,7 @@ then click on the element with that event handler, you'll probably see the alert
 
 Ok hopefully that image of the squirrel was enough to distract you from reading the answer.
 
-Answer: So if you create an alert in the **'focus'** event, when you go to click the alert popup to close it, you are going through the following event loop.
+Answer: So if you create an alert in the **'focus'** event handler, when you go to click the alert popup to close it, you are going through the following event loop.
 
 1) giving focus to the input element that calls the 'focus' event that creates the alert
 
@@ -171,4 +171,4 @@ Answer: So if you create an alert in the **'focus'** event, when you go to click
 
 5) the last element to have focus was the element with the callback that creates the alert and the whole thing starts over, back to step #1
 
-Not thinking, I instructed a student to write this code and it took a minute to figure out what had happened. The lesson being, sometimes it's not a good idea to blindly swap console.log with alert. :)
+Not thinking, I instructed a student to write this code and it took a minute to figure out what had happened. The lesson being, sometimes it's not a good idea to blindly swap *"console.log(...)"* with *"alert(...)"*. :)
