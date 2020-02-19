@@ -3,7 +3,3 @@
   visibility: hidden;
 
 }
-
-input:focus + label {
-  background-color: red;
-}
