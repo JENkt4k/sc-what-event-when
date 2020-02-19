@@ -95,3 +95,59 @@ Above shows no warning when the user enters the text box, or after leaving, if t
 
 Below
 ![empty password, warning](images/password-no-value-warn.png)
+
+Confused yet? Play with the code by changing "onfocus" to "onblur" and back for the different inputs in the index.html file.
+```html
+//change the event from onblur to onfocus
+//initial code:
+<input type="password" id="user-pwd" onblur="showWarningWhenEmptyHandler(event)">
+//changed:
+<input type="password" id="user-pwd" onfocus="showWarningWhenEmptyHandler(event)">
+```
+
+Then change the event handlers being called
+```html
+//change the function for the events
+//initial code:
+<input type="password" id="user-pwd" onblur="showWarningWhenEmptyHandler(event)">
+//changed:
+<input type="password" id="user-pwd" onblur="logOnEventHandler(event)">
+//and changed again:
+<input type="password" id="user-pwd" onblur="alertOnEventHandler(event)">
+
+//change both
+<input type="password" id="user-pwd" onfocus="logOnEventHandler(event)">
+//
+<input type="password" id="user-pwd" onfocus="alertOnEventHandler(event)">
+
+```
+
+Did you see some strange behavior? What happens if you use both ***'onblur'*** and ***'onfocus'***?
+
+##  The "Infinite" UI loop
+
+If you set ***'onfocus'*** to
+```javascript
+onfocus="alertOnEventHandler(event)"
+```
+then click on the element with that event handler, you'll probably see the alert continuously pop up. Can you guess why this is happening? Pause for a moment before reading further.
+
+**SQUIRREL!!!!**
+
+![squirrel](https://images.pexels.com/photos/47547/squirrel-animal-cute-rodents-47547.jpeg?cs=srgb&dl=brown-squirrel-47547.jpg&fm=jpg)
+
+Ok hopefull that image of the squirrel was enough to distract you from reading the answer.
+
+Answer: So if you create an alert in the **'focus'** event, when you go to click the alert popup to close it, you are going through the following event loop.
+
+1) giving focus to the input element that calls the 'focus' event that creates the alert
+
+2) the focus method is called and an alert is created
+
+3) the alert gets focus, the original calling element gets blurred
+
+4) when the "OK" button is clicked, the popup is closed and default focus goes back to the last element that had focus
+
+5) the last element to have focus was the elment with the callback that creates the alert and the whole thing starts over, back to step #1
+
+Not thinking, I instructed a student to write this code and it took a minute to figure out what had happened. The lesson being, sometimes it's not a good idea to simply swap console.log with alert.
