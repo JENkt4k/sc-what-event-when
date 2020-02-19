@@ -1,25 +1,24 @@
-# Savvy Coders Project Boilerplate Starter Kit
+# Savvy Coders - Student Question: What event when?
 
 ## Overview
 
-This template repository contains several opinionated, 'starter' files and settings to help Savvy Coder students focus more time and energy on learning how to code and/or craft 'business logic' for projects and less time on configurations.
+"What would you use 'focus' event for?" was an excellent question and hilariously led me to guiding the student to writing an accidental infinite UI loop. So I thought I would create some quick example code for some common events I've seen used.
 
-In addition to a '.gitignore' and some VS Code specific extensions and settings, it includes the 'recommended' settings for:
+## What Events?
 
-1. [ESLint](eslint.org)
-2. [Stylelint](stylelint.io)
-3. [Prettier](prettier.io)
+MDN has a list of events [here](https://developer.mozilla.org/en-US/docs/Web/Events), let's go over some common ones seen in the wild focusing on the ones of highest value.
 
-## Get Started
+| Event Name  | Fired When  |
+|---|---|
+| focus | An element has received focus (does not bubble). |
+| blur |  An element has lost focus (does not bubble). |
+| click | A pointing device button (ANY button; soon to be primary button only) has been pressed and released on an element |
 
-**First and foremost,** make sure that your local machine is set up with all of the 'dev environment tooling' as per [this guide...](https://www.notion.so/codefinity/Setting-up-a-Local-Dev-Environment-97de62a546f943fbbc7a246b4785a343)
 
-Well, after establishing your directory structure on your local machine, (e.g. '~/Code/SavvyCoders'), kindly [follow these girections](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-repository-from-a-template) - essentially, there should be a button 👆🏾that says **Use this template.**
 
-Once this repo has been created on your GitHub, you can click on the button to 'clone' it as usual. Once it's `clone`d to your local machine, kindly `cd` into the directory and **be sure to do:** `npm i` to get all of the goodies. If you see any _errors_ (warnings are 🙆🏾‍♂️) on Windows, you may have to do `npm install`.
+## When Should we use them?
 
-Now, enter `code .` to open this project in VS Code, and look for a prompt to 'install some extensions' once inside VS Code (in the bottom right of your screen). You should install these. 👍🏾
+But before that, lets quickly go over the question "What would you use 'focus' for?"
 
-Update this README and make any other initial changes or 🌱 files, etc. Go ahead and do your usual `git` steps, etc. etc. etc.
+A good example would be a form where the user is expected to put in a required value first, or before the user moves out of an entry filed like a text box. "Password" and/or "Username" are good examples when creating a new account.
 
-**Note:** This is a template repository, no need to 'fork it.
