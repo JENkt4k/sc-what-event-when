@@ -18,7 +18,7 @@ MDN has a list of events [here](https://developer.mozilla.org/en-US/docs/Web/Eve
 
 ***"click"*** is probably the most commonly used event, but before we get to that, lets quickly go over the question "What would you use 'focus' for?"
 
-A good example for ***'focus*** *(or more appropriately **'blur'**)* would be a form where the user is expected to put in a required value first, or before the user moves out of an entry field like a text box. "Password" and/or "Username" are good examples as when creating a new account or logging in these cannot be left blank.
+A good example for ***'focus'*** *(or more appropriately **'blur'**)* would be a form where the user is expected to put in a required value first, or before the user moves out of an entry field like a text box. "Password" and/or "Username" are good examples as when creating a new account or logging in these cannot be left blank.
 
 ```javascript
 //generic functions
