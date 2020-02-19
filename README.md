@@ -6,7 +6,7 @@
 
 ## What Events?
 
-MDN has a list of events [here](https://developer.mozilla.org/en-US/docs/Web/Events), let's go over some common ones seen in the wild focusing on the ones of highest value.
+MDN has a list of events [here](https://developer.mozilla.org/en-US/docs/Web/Events), let's go over some common ones seen in the wild.
 
 | Event Name  | Fired When  |
 |---|---|
@@ -49,11 +49,7 @@ function showWarningWhenEmptyHandler(event){
 
 With the preceding code, the user sees a string of red text, see below after entering the empty input box.
 
-<div style="background-color:rgb(255, 254, 224); padding:2em;">
-<label>Password:</label>
-<input type="password" id="user-pwd" onfocus="showWarningWhenEmptyHandler(event)">
-<label id="user-password-warning" class="warning" style="color:red;">* Required field: You need to enter a password!!!</label><br><br>
-</div>
+![empty password, warning](images/password-no-value-warn.png)
 
 If the user enters some data, leaves and then re-enters, the warning is hidden with the ternary operator code here:
 
@@ -78,13 +74,9 @@ if(!event.target.value){
 ```
 
 Resulting in the following:
-<div style="background-color:rgb(255, 254, 224); padding:2em;">
-<label>Password:</label>
-<input type="password" id="user-pwd" onfocus="showWarningWhenEmptyHandler(event)">
-<label id="user-password-warning" class="warning" style="color:red; visibility:hidden;">* Required field: You need to enter a password!!!</label><br><br>
-</div>
+![empty password, warning](images/password-no-value-no-warn.png)
 
-What we really want is to show the text after the user clicks off the input iff they didn't enter the correct/any input.  To do this, we use **'blur'**.
+What we really want is to show the text after the user clicks off the input *iff* they didn't enter the correct/any input and then leave the input box.  To do this, we use **'blur'**. (Note: *'iff'* is not a typo, it stands for "if and only if" )
 
 ```html
       <label>Password:</label>
@@ -92,17 +84,9 @@ What we really want is to show the text after the user clicks off the input iff 
       <label id="user-password-warning" class="warning">* Required field: You need to enter a password!!!</label><br><br>
 ```
 
-<div style="background-color:rgb(255, 254, 224); padding:2em;">
-<label>Password:</label>
-<input type="password" id="user-pwd" value="***" onblur="showWarningWhenEmptyHandler(event)">
-<label id="user-password-warning" class="warning" style="color:red; visibility:hidden;">* Required field: You need to enter a password!!!</label><br><br>
-</div>
+![empty password, warning](images/password-value-no-warn.png)
 
 Above shows no warning when the user enters the text box, or after leaving, if there is data when using ***'blur'*** *(onblur)* event.
 
 Below
-<div style="background-color:rgb(255, 254, 224); padding:2em;">
-<label>Password:</label>
-<input type="password" id="user-pwd" onblur="showWarningWhenEmptyHandler(event)">
-<label id="user-password-warning" class="warning" style="color:red;">* Required field: You need to enter a password!!!</label><br><br>
-</div>
+![empty password, warning](images/password-no-value-warn.png)
