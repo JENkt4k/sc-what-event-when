@@ -79,7 +79,17 @@ if(!event.target.value){
 ```
 
 Resulting in the following:
+
+1) inital state:
 ![empty password, warning](images/password-no-value-no-warn.png)
+2) user clicks the input:
+![empty password, warning](images/password-no-value-warn.png)
+3) user enters text:
+![empty password, warning](images/password-value-warn.png)
+4) the user clicks any other element:
+![empty password, warning](images/password-value-warn.png)
+5) the user clicks the password input again:
+![empty password, warning](images/password-value-no-warn.png)
 
 What we really want is to show the text after the user clicks off the input *iff* they didn't enter the correct/any input and then leave the input box.  To do this, we use **'blur'**. (Note: *'iff'* is not a typo, it stands for "if and only if" )
 
@@ -88,12 +98,23 @@ What we really want is to show the text after the user clicks off the input *iff
       <input type="password" id="user-pwd" onblur="showWarningWhenEmptyHandler(event)">
       <label id="user-password-warning" class="warning">* Required field: You need to enter a password!!!</label><br><br>
 ```
-
+No we see the following:
+1) inlitial state:
+![empty password, warning](images/password-no-value-no-warn.png)
+2) the user enters a value:
 ![empty password, warning](images/password-value-no-warn.png)
+3) the user clicks away:
+![empty password, warning](images/password-value-no-warn.png)
+4) the user clicks back:
+![empty password, warning](images/password-value-no-warn.png)
+5) the user deletes the value:
+![empty password, warning](images/password-no-value-no-warn.png)
+6) the user clicks away:
+![empty password, warning](images/password-no-value-warn.png)
 
 Above shows no warning when the user enters the text box, or after leaving, if there is data when using ***'blur'*** *(onblur)* event.
 
-Below
+Only if the user leaves the input empty do we see the warning below:
 ![empty password, warning](images/password-no-value-warn.png)
 
 Confused yet? Play with the code by changing "onfocus" to "onblur" and back for the different inputs in the index.html file.
@@ -136,7 +157,7 @@ then click on the element with that event handler, you'll probably see the alert
 
 ![squirrel](https://images.pexels.com/photos/47547/squirrel-animal-cute-rodents-47547.jpeg?cs=srgb&dl=brown-squirrel-47547.jpg&fm=jpg)
 
-Ok hopefull that image of the squirrel was enough to distract you from reading the answer.
+Ok hopefully that image of the squirrel was enough to distract you from reading the answer.
 
 Answer: So if you create an alert in the **'focus'** event, when you go to click the alert popup to close it, you are going through the following event loop.
 
