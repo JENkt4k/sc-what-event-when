@@ -20,6 +20,7 @@ MDN has a list of events [here](https://developer.mozilla.org/en-US/docs/Web/Eve
 
 A good example for ***'focus'*** *(or more appropriately **'blur'**)* would be a form where the user is expected to enter a required value first, or before the user moves out of an entry field like a text box. "Password" and/or "Username" are good examples as when creating a new account or logging in these cannot be left blank.
 
+
 ```javascript
 //generic functions
 //create an alert event callback
@@ -46,10 +47,14 @@ function showWarningWhenEmptyHandler(event){
       <input type="password" id="user-pwd" onfocus="showWarningWhenEmptyHandler(event)">
       <label id="user-password-warning" class="warning">* Required field: You need to enter a password!!!</label><br><br>
 ```
+When the form loads, the password field looks like this:
+![empty password, warning](images/password-no-value-no-warn.png)
 
-With the preceding code, the user sees a string of red text, see below after entering the empty input box.
+With the preceding code, the user sees a string of red text, see below, after entering (clicking on) the empty input box.
 
 ![empty password, warning](images/password-no-value-warn.png)
+
+clicking on an element in the page puts the item in 'focus', clicking off is removing the element from focus or *'blur'*-ing the element
 
 If the user enters some data, leaves and then re-enters, the warning is hidden with the ternary operator code here:
 
